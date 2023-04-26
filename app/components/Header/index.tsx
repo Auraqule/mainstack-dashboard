@@ -61,7 +61,7 @@ const Header = () => {
       <HeaderTitle isMenuOpen={isMenuOpen} handleModalOpen={handleModalOpen} />
       {isMenuOpen && (
         <div
-          onClick={() => setIsMenuOpen(false)}
+          onClick={handleModalClose}
           className="fixed  top-0 bottom-0 left-0 right-0 bg-black/50"
         />
       )}
