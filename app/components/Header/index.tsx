@@ -11,14 +11,14 @@ type Iprops = {
 };
 const HeaderTitle = ({ isMenuOpen, handleModalOpen }: Iprops) => {
   return (
-    <div className="flex  py-[22px] text-sm sm:text-base md:text-lg font-medium  mb-6 items-center justify-between">
+    <div className="flex py-[22px] px-3 md:px-0 text-sm sm:text-base md:text-lg font-medium  mb-6 items-center justify-between">
       <div className="">
         <p>Dashboard</p>
       </div>
 
       <BiMenu
         onClick={handleModalOpen}
-        className="w-6 h-6 block md:hidden relative -left-6"
+        className="w-6 h-6 block md:hidden relative "
       />
     </div>
   );
