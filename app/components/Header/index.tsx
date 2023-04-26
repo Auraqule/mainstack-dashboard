@@ -16,7 +16,10 @@ const HeaderTitle = ({ isMenuOpen, handleModalOpen }: Iprops) => {
         <p>Dashboard</p>
       </div>
 
-      <BiMenu onClick={handleModalOpen} className="w-6 h-6 relative -left-6" />
+      <BiMenu
+        onClick={handleModalOpen}
+        className="w-6 h-6 block md:hidden relative -left-6"
+      />
     </div>
   );
 };
