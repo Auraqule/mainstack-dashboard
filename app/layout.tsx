@@ -16,10 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
       <body className={inter.className}>
-        <section className="w-full h-screen flex sm:gap-x-[3%] lg:gap-x-[5%] ">
+        <section className="w-full h-auto md:h-screen flex sm:gap-x-[3%] lg:gap-x-[5%] ">
           <SideBar />
-          <main className="flex-1">{children}</main>
+          <main className="w-full">{children}</main>
         </section>
       </body>
     </html>

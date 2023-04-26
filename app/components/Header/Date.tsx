@@ -17,11 +17,11 @@ const Date = () => {
           <div
             key={date}
             onClick={() => setSelectedDate(date)}
-            className={`py-3 px-4 w-auto whitespace-nowrap rounded-[100px] cursor-pointer ${
+            className={`py-2 md:py-3 px-4 w-auto whitespace-nowrap rounded-[100px] cursor-pointer ${
               selectedDate === date
                 ? "bg-lightOrange_ text-darkOrange_ border-darkOrange_"
                 : "bg-transparent border-[#EFF1F6]"
-            } text-xs font-medium border-[1px] `}
+            } text-[10px] sm:text-xs md:font-medium border-[1px] `}
           >
             {date}
           </div>

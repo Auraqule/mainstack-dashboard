@@ -10,14 +10,14 @@ type Iprops = {
 };
 const HeaderTitle = ({ isMenuOpen, setIsMenuOpen }: Iprops) => {
   return (
-    <div className="flex py-[22px] text-lg font-medium  mb-6 items-center justify-between">
+    <div className="flex  py-[22px] text-sm sm:text-base md:text-lg font-medium  mb-6 items-center justify-between">
       <div className="">
         <p>Dashboard</p>
       </div>
 
       <BiMenu
         onClick={() => setIsMenuOpen(true)}
-        className="w-7 h-7 relative -left-6"
+        className="w-6 h-6 relative -left-6"
       />
     </div>
   );
@@ -31,7 +31,7 @@ const Menu = ({ isMenuOpen, setIsMenuOpen }: Iprops) => {
     >
       <MdOutlineClose
         onClick={() => setIsMenuOpen(false)}
-        className="w-7 h-7 absolute right-6 top-6"
+        className="w-6 h-6 absolute right-4 top-4"
       />
       <MobileNav />
     </div>
@@ -50,14 +50,14 @@ const Header = () => {
           className="fixed  top-0 bottom-0 left-0 right-0 bg-black/50"
         />
       )}
-      <div className="flex w-[90%] md:w-full text-xl  md:text-2xl font-semibold items-center justify-between">
+      <div className="flex w-[98%] md:w-full text-base sm:text-lg  md:text-2xl font-semibold items-center justify-between">
         <div>
           <p>Good morning, Blessing ⛅️</p>
-          <p className="text-sm mt-[10px] font-normal">
+          <p className="text-xs md:text-sm mt-[10px] font-normal">
             Check out your dashboard summary.
           </p>
         </div>
-        <div className="text-darkOrange_ hover:underline underline-offset-4 cursor-default text-sm font-normal">
+        <div className="text-darkOrange_ hover:underline underline-offset-4 cursor-default text-xs md:text-sm font-normal">
           <p>View analytics</p>
         </div>
       </div>

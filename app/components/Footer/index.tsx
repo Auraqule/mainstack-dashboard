@@ -15,17 +15,17 @@ const Footer = ({ analytics }: Iprops) => {
         <div className="flex flex-col lg:flex-row items-center gap-4">
           <div className="basis-1/2 w-full md:w-[95%] rounded-xl p-6  border-[1px]">
             <div className="font-semibold flex items-center justify-between">
-              <p>Top Locations</p>
-              <div className="text-darkOrange_ hover:underline underline-offset-4 cursor-default text-sm font-normal">
+              <p className="text-sm sm:text-base">Top Locations</p>
+              <div className="text-darkOrange_ hover:underline underline-offset-4 cursor-default text-xs sm:text-sm font-normal">
                 <p>View full reports</p>
               </div>
             </div>
-            <div className="flex w-[100%] md:w-[95%] h-[200px] mt-10 items-center justify-between">
+            <div className="flex w-[100%] md:w-[95%] h-[200px] mt-6 sm:mt-10 items-center justify-between">
               {/* ============= TOP LOCATIONS =============== */}
               <div>
                 {analytics.top_locations.map((location) => (
                   <div key={location.country} className="mb-4">
-                    <div className="flex items-center space-x-2 text-sm">
+                    <div className="flex items-center space-x-2 text-xs sm:text-sm whitespace-nowrap">
                       <Image
                         src={`/${
                           location.country === "Nigeria"
@@ -70,7 +70,7 @@ const Footer = ({ analytics }: Iprops) => {
               </div>
 
               {/* ============  CHART ========== */}
-              <div className="w-[160px] h-[160px]  rounded-full">
+              <div className="w-[140px] h-[140px]  sm:w-[160px] sm:h-[160px]  rounded-full">
                 <TopLocationChart top_locations={analytics.top_locations} />
               </div>
             </div>
@@ -79,16 +79,16 @@ const Footer = ({ analytics }: Iprops) => {
           {/* TOP SOURCES */}
           <div className="basis-1/2 w-full md:w-[95%]   rounded-xl p-6  border-[1px]">
             <div className="font-semibold flex items-center justify-between">
-              <p>Top Referral source</p>
-              <div className="text-darkOrange_ hover:underline underline-offset-4 cursor-default text-sm font-normal">
+              <p className="text-sm sm:text-base">Top Referral source</p>
+              <div className="text-darkOrange_ hover:underline underline-offset-4 cursor-default text-xs sm:text-sm font-normal">
                 <p>View full reports</p>
               </div>
             </div>
-            <div className="flex mt-10 items-center h-[200px] justify-between">
+            <div className="flex mt-4 sm:mt-10 items-center h-[200px] justify-between">
               <div>
                 {analytics.top_sources.map((source) => (
                   <div key={source.source} className="mb-4">
-                    <div className="flex items-center space-x-2 text-sm">
+                    <div className="flex items-center space-x-2 text-xs sm:text-sm">
                       <Image
                         src={`/${source.source}.svg`}
                         alt={source.source}
@@ -121,7 +121,7 @@ const Footer = ({ analytics }: Iprops) => {
               </div>
 
               {/* ============  CHART ========== */}
-              <div className="w-[160px] h-[160px] rounded-full">
+              <div className="w-[140px] h-[140px]  sm:w-[160px] sm:h-[160px] rounded-full">
                 <TopSourceChart top_sources={analytics.top_sources} />
               </div>
             </div>

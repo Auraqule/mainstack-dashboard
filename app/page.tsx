@@ -19,19 +19,19 @@ export default async function Home() {
     <section className="w-[95%] mx-auto md:w-full h-auto sm:h-full pb-6  md:pr-[5%] sm:overflow-y-scroll">
       <Header />
       {/* =============== Main =========== */}
-      <main className="my-6 flex-1 rounded-xl px-6 pt-7 pb-5 h-auto border-[1px]">
+      <main className="my-6 flex-1 rounded-xl px-4 sm:px-6 pt-7 pb-5 h-auto border-[1px]">
         <div className="font-semibold flex items-center justify-between">
           <div>
-            <p>Page Views</p>
-            <p className="text-sm font-normal mt-2">All time</p>
-            <p className="text-3xl font-semibold mt-4">
+            <p className="text-sm sm:text-base">Page Views</p>
+            <p className="text-xs sm:text-sm font-normal mt-2">All time</p>
+            <p className="text-xl sm:text-3xl font-semibold mt-4">
               {sumKeys(analyticsData.graph_data.views)}
             </p>
           </div>
 
           <AiOutlineInfoCircle className="opacity-60" />
         </div>
-        <div className="w-full">
+        <div className="">
           <LineChart views={analyticsData.graph_data.views} />
         </div>
       </main>

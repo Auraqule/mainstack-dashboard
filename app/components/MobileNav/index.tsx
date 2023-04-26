@@ -96,10 +96,10 @@ const Row = ({ item, selectedSide, setSelectedSide }: Iprops) => {
         </p>
       </div>
       {item.id === "side_3" && (
-        <p className="text-xs mb-4 mt-8 text-lightText_">OTHERS 1</p>
+        <p className="text-xs mb-4 mt-6 text-lightText_">OTHERS 1</p>
       )}
       {item.id === "side_5" && (
-        <p className="text-xs mb-4 mt-8 text-lightText_">OTHERS 2</p>
+        <p className="text-xs mb-3 mt-6 text-lightText_">OTHERS 2</p>
       )}
     </>
   );
@@ -108,16 +108,16 @@ const Row = ({ item, selectedSide, setSelectedSide }: Iprops) => {
 const MobileNav = () => {
   const [selectedSide, setSelectedSide] = useState("side_0");
   return (
-    <aside className="w-[21%] min-w-[250px] h-screen pt-[32px]">
+    <aside className="w-full min-w-[160px]  h-screen pt-[32px]">
       <Image
         src="/mainstack-logo.svg"
         alt="Mainstack Logo"
         className="ml-[18%]"
-        width={40}
-        height={40}
+        width={30}
+        height={30}
         priority
       />
-      <div className="mt-10 ml-[20%]">
+      <div className="mt-6 px-4 text-xs">
         {sideData.map((item) => (
           <Row
             key={item.id}
@@ -129,9 +129,9 @@ const MobileNav = () => {
       </div>
 
       {/* ========== User Profile ========= */}
-      <div className="mt-[16%] ml-[20%] flex items-center justify-between pr-4">
-        <div className=" flex items-center space-x-2">
-          <div className="overflow-hidden text[15px] text-lightText_ h-8 w-8 rounded-full">
+      <div className="mt-[16%]  flex items-center justify-between">
+        <div className=" flex items-center text-xs space-x-2">
+          <div className="overflow-hidden  text-lightText_ h-8 w-8 rounded-full">
             <Image
               src="/person.svg"
               alt="User Picture"
@@ -142,7 +142,7 @@ const MobileNav = () => {
           </div>
           <p>Blessing Daniels</p>
         </div>
-        <MdOutlineMoreHoriz />
+        {/* <MdOutlineMoreHoriz  /> */}
       </div>
     </aside>
   );
