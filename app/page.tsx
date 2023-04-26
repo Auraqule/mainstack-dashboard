@@ -15,7 +15,6 @@ const fetchAnalyticsData = async () => {
 
 export default async function Home() {
   const analyticsData = await fetchAnalyticsData();
-  console.log(analyticsData);
   return (
     <section className="w-[95%] mx-auto md:w-full h-auto sm:h-full pb-6  md:pr-[5%] sm:overflow-y-scroll">
       <Header />
