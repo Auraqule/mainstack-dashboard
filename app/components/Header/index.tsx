@@ -6,23 +6,21 @@ import { MdOutlineClose } from "react-icons/md";
 import MobileNav from "../MobileNav";
 type Iprops = {
   isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleModalOpen?: any;
+  handleModalClose?: any;
 };
-const HeaderTitle = ({ isMenuOpen, setIsMenuOpen }: Iprops) => {
+const HeaderTitle = ({ isMenuOpen, handleModalOpen }: Iprops) => {
   return (
     <div className="flex  py-[22px] text-sm sm:text-base md:text-lg font-medium  mb-6 items-center justify-between">
       <div className="">
         <p>Dashboard</p>
       </div>
 
-      <BiMenu
-        onClick={() => setIsMenuOpen(true)}
-        className="w-6 h-6 relative -left-6"
-      />
+      <BiMenu onClick={handleModalOpen} className="w-6 h-6 relative -left-6" />
     </div>
   );
 };
-const Menu = ({ isMenuOpen, setIsMenuOpen }: Iprops) => {
+const Menu = ({ isMenuOpen, handleModalClose }: Iprops) => {
   return (
     <div
       className={`fixed p-4 transition-all z-50 duration-300 ease-linear  ${
@@ -30,7 +28,7 @@ const Menu = ({ isMenuOpen, setIsMenuOpen }: Iprops) => {
       } top-0 bottom-0   bg-white `}
     >
       <MdOutlineClose
-        onClick={() => setIsMenuOpen(false)}
+        onClick={handleModalClose}
         className="w-6 h-6 absolute right-4 top-4"
       />
       <MobileNav />
@@ -40,10 +38,24 @@ const Menu = ({ isMenuOpen, setIsMenuOpen }: Iprops) => {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleModalClose = () => {
+    setIsMenuOpen(false);
+    const enableScroll = () => {
+      document.body.style.overflowY = "scroll";
+    };
+    enableScroll();
+  };
 
+  const handleModalOpen = () => {
+    setIsMenuOpen(true);
+    const disableScroll = () => {
+      document.body.style.overflowY = "hidden";
+    };
+    disableScroll();
+  };
   return (
     <header className="w-full">
-      <HeaderTitle isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <HeaderTitle isMenuOpen={isMenuOpen} handleModalOpen={handleModalOpen} />
       {isMenuOpen && (
         <div
           onClick={() => setIsMenuOpen(false)}
@@ -61,7 +73,7 @@ const Header = () => {
           <p>View analytics</p>
         </div>
       </div>
-      <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Menu isMenuOpen={isMenuOpen} handleModalClose={handleModalClose} />
       {/* ====== DATE ======== */}
       <Date />
     </header>
